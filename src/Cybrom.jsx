@@ -1,10 +1,13 @@
-import College from "./College"
 
-const Cybrom=()=>{
+
+const Cybrom=(props)=>{
     return(
     <>
-    <h1>Welcome to Cybrom</h1>
-    <College nm="RNTU"/>
+    
+    <h2>Roll no:{props.rno}</h2>
+    <h2>Name :{props.nm}</h2>
+    <h2>Fees :{props.fs}</h2>
+    <hr/>
     </>
     )
 }
