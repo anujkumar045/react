@@ -1,14 +1,14 @@
+import Bhopal from "./Bhopal";
 
 
-const Cybrom=(props)=>{
+
+const Cybrom=()=>{
     return(
-    <>
-    
-    <h2>Roll no:{props.rno}</h2>
-    <h2>Name :{props.nm}</h2>
-    <h2>Fees :{props.fs}</h2>
-    <hr/>
-    </>
+        <>
+        <h1 id ="data1">We learn from Cybrom </h1>
+        <Bhopal/>
+
+        </>
     )
 }
 

@@ -1,11 +1,13 @@
-const College=(props)=>{
-    return(
-        <>
-        <h1>My name is : {props.nm}</h1>
-        <h2>Subject : {props.sub}</h2>
-        <h3>Fees : {props.fs}</h3>
-        </>
-    )
-}
+const College=()=>{
+const stu={
+    color:"blue",
+    fontFamily:"arial",
 
+}
+return(
+    <>
+    <h1 style={stu}>We learn js</h1>
+    </>
+)
+}
 export default College;
