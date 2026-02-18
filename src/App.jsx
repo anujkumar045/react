@@ -1,25 +1,13 @@
-import { useState } from "react";
+import { useState } from "react" ; 
+import Comp1 from "./Comp1";
 
 const App=()=>{
-const [count,setCount] =useState(0);
-   const display=()=>{
-        if (count==0){
-           alert("Value cannot be decremented ")
-        }
-        else{
-          setCount(count-1)
-        }
-   }
+  const[user,setuser]=useState("Anuj");
   return(
     <>
-      <h1>Counter App</h1>
-      <button onClick={()=>{setCount(count+1)}}>Increment</button>
-      <h1>{count}</h1>
-      <button onClick={display}>Decrement</button>
-
-
+    <h1>Welcome :{user}</h1>
+    <Comp1 user={user}/>
     </>
   )
 }
-
-export default App;   
+export default App;
