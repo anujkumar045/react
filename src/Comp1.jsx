@@ -1,14 +1,16 @@
-import React from "react";
+
 import Comp2 from "./Comp2";
 
 
-const Comp1=({user})=>{
+const Comp1=()=>{
+    return(
     <>
     <h2>
        Component 1
     </h2>
-    < Comp2 user={user}/>
+    < Comp2/>
     </>
+    )
 }
 
 export default Comp1;
