@@ -1,5 +1,5 @@
 
-import Comp5 from "./Comp5"
+import Comp5 from "./Bhopal"
 
 const Comp4=()=>{
     return(

@@ -1,17 +1,15 @@
-import Comp1 from "./Comp1";
-import { useState } from "react";
-import { createContext } from "react";
-const MyContext=createContext(); 
+import AuthApp from "./AuthApp";
+import UnAuthApp from "./UnAuthApp";
+import { useContext } from "react";
+import { UserLogin } from "./LoginContext";
 const App=()=>{
-  const[user,setuser]=useState("Anuj");
+  const {user}=useContext(UserLogin);
   return(
     <>
-    <h1>Welcome :{user}</h1>
-    <MyContext.Provider value={user}>
-    <Comp1 />
-    </MyContext.Provider>
+    <h1>Welcome to my App</h1>
+
+    {user.auth ? <AuthApp/>:<UnAuthApp/>}
     </>
   )
 }
 export default App;
-export {MyContext};
