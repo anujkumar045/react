@@ -7,7 +7,7 @@ const AuthApp=()=>{
         <>
         <h1>Auth App</h1>
         <h2>Welcome {user.name}</h2>
-        <button onClick={logout}>Logout</button>
+         <button onClick={logout}>Logout</button>
         </>
     )
 }
