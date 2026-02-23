@@ -4,8 +4,8 @@ import LoginContext from './LoginContext.jsx';
 
 
 createRoot(document.getElementById('root')).render(
-    <LoginContext>
+    
 
         <App />
-    </LoginContext>
+    
 )
