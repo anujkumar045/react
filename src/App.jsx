@@ -1,20 +1,17 @@
-import { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Decrement, Increment } from "./counterslice";
+
 const App=()=>{
-  const [add,setAdd]=useState(0);
-  const [minus,setMinus]=useState(100);
-  function myCalculation(){
-    console.log("*****");
-    return add*2;
-  }
-  const myMultival=useMemo(myCalculation,[add]);
+  const myval=useSelector(state=>state.mycounter.count);
+  const dispatch =useDispatch();
   return(
     <>
     <h1>Welcome</h1>
-    <button onClick={()=>{setAdd(add+1)}}>Addition</button>
-    <button onClick={()=>{setMinus(minus-1)}}>Substraction</button>
-    <h2>My Addition :{add}</h2>
-    <h2>My Substraction :{minus}</h2>
-    <h1>My Multi : {myMultival}</h1>
+    <button onClick={()=>{dispatch(Increment)}}>Increment</button>
+    <h1>myval</h1>
+    <button onClick={()=>{dispatch(Decrement)}}>Decrement</button>
+    
     </>
   )
 }
