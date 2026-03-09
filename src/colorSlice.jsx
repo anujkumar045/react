@@ -5,8 +5,8 @@ const colorSlice=createSlice({
         color:"green"
     },
     reducers:{
-        colorChange:(state)=>{
-            state.color="red"
+        colorChange:(state,actions)=>{
+            state.color=actions.payload.color;
         }
     }
 })
