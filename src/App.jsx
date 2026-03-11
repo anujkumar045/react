@@ -1,8 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { addTask,recDel,taskComp,taskIncomp} from "./todoSlice";
+import { addTask,recDel,taskComp,taskIncomp,editDataSave} from "./todoSlice";
 const App=()=>{
   const [txtval,settxtval]=useState("");
+  const [btnStatus,setBtnStatus]=useState(true);
+  const [taskId,settaskId]=useState("");
   const  task= useSelector(state=>state.todo.task);
   const dispatch=useDispatch();
   console.log(task);
@@ -31,6 +33,9 @@ const App=()=>{
       <td>
         <button onClick={()=>dispatch(taskIncomp({id:key.id}))}>Incomplete</button>
       </td>
+      <td>
+        <button onClick={()=>{myEdit(key.work,key.id)}}>Edit</button>
+      </td>
       
       </tr>
       
@@ -41,7 +46,13 @@ const App=()=>{
 
       <h1> To do App</h1>
       Enter task:<input type="text" value={txtval} onChange={(e)=>{settxtval(e.target.value)}}/>
-      <button onClick={()=>{dispatch(addTask({id:Date.now(),work:txtval}))}}>Add</button>
+      {btnStatus ? (<>
+        <button onClick={()=>{dispatch(addTask({id:Date.now(),work:txtval}))}}>Add</button>
+
+      </>):
+      (<>
+             <button onClick={myEditSave}>Save</button>
+      </>)}
       <hr/>
       <table border="1">
         <tr>

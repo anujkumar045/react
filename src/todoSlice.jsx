@@ -26,8 +26,16 @@ const todoSlice=createSlice({
                 }
             }
         },
+        editDataSave:(state,actions)=>{
+            console.log(actions.payload);
+            for(var i=0;i<state.task.length;i++){
+                if(state.task[i].id==actions.payload.id){
+                    state.task[i].work=actions.payload.work;
+                }
+            }
+        }
     }
 })
 
-export const{addTask,recDel,taskComp,taskIncomp}=todoSlice.actions;
+export const{addTask,recDel,taskComp,taskIncomp,editDataSave}=todoSlice.actions;
 export default todoSlice.reducer;
