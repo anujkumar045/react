@@ -8,7 +8,16 @@ const App=()=>{
   const  task= useSelector(state=>state.todo.task);
   const dispatch=useDispatch();
   console.log(task);
-
+  const myEdit=(work,id)=>{
+       settxtval(work)
+       setBtnStatus(false)
+       settaskId(id)
+  }
+  const myEditSave=()=>{
+      settxtval("");
+      setBtnStatus(true)
+      dispatch(editDataSave({id:taskId,work:txtval}))
+  }
   let sno=0;
     const ans=task.map((key)=>{
       sno++;
@@ -58,7 +67,7 @@ const App=()=>{
         <tr>
           <th>S.No.</th>
           <th>Your tasks</th>
-          <th colSpan={3}>Actions</th>
+          <th colSpan={4}>Actions</th>
           
         </tr>
         {ans}
